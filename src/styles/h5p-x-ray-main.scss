@@ -1,0 +1,14 @@
+$default-darkening-filter: brightness(.75) grayscale(1);
+$default-image-placeholder-height: max(300px, 50vh);
+$default-transition-duration: 0.3s;
+$default-transition-timing-function: ease-in-out;
+
+$button-toggle-background-color: #000000;
+$button-toggle-color: #ffffff;
+$button-toggle-font-size: 1.1em;
+$button-toggle-offset: .5em;
+$button-toggle-size: 2em;
+
+$icon-button-x-ray: '\f002';
+$icon-button-x-ray-in: '\f00e';
+$icon-button-x-ray-out: '\f010';

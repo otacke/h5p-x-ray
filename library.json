@@ -1,0 +1,36 @@
+{
+  "title": "X-Ray",
+  "description": "Add an x-ray effect to images",
+  "majorVersion": 0,
+  "minorVersion": 1,
+  "patchVersion": 0,
+  "runnable": 1,
+  "author": "Oliver Tacke",
+  "license": "MIT",
+  "machineName": "H5P.XRay",
+  "embedTypes": [
+    "iframe"
+  ],
+  "preloadedJs": [
+    {
+      "path": "dist/h5p-x-ray.js"
+    }
+  ],
+  "preloadedCss": [
+    {
+      "path": "dist/h5p-x-ray.css"
+    }
+  ],
+  "preloadedDependencies": [
+    {
+      "machineName": "H5P.Question",
+      "majorVersion": 1,
+      "minorVersion": 5
+    },
+    {
+      "machineName": "H5P.Image",
+      "majorVersion": 1,
+      "minorVersion": 1
+    }
+  ]
+}

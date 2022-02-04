@@ -1,0 +1,119 @@
+@import './h5p-x-ray-main';
+
+.h5p-x-ray {
+  .h5p-question-content {
+    margin: 0;
+
+    .h5p-x-ray-container {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+
+      &.h5p-x-ray-active {
+        .h5p-x-ray-displays {
+          .h5p-x-ray-display-navigation {
+
+            &:hover {
+              cursor: crosshair;
+            }
+
+            .h5p-x-ray-wrapper-navigation {
+              .h5p-x-ray-image-navigation {
+                &.h5p-x-ray-darken {
+                  filter: $default-darkening-filter;
+                }
+              }
+            }
+
+            .h5p-x-ray-wrapper-lens {
+              opacity: 1;
+            }
+
+            .h5p-x-ray-button-toggle {
+              &::before {
+                content: $icon-button-x-ray-in;
+                font-family: 'H5PFontAwesome4';
+              }
+            }
+          }
+        }
+      }
+
+      &:not(.h5p-x-ray-auto):not(.h5p-x-ray-active) {
+        .h5p-x-ray-displays {
+          .h5p-x-ray-display-navigation:hover {
+            cursor: zoom-in;
+          }
+        }
+      }
+
+      .h5p-x-ray-displays {
+        display: flex;
+        flex-direction: column;
+
+        .h5p-x-ray-display-navigation {
+          position: relative;
+
+          .h5p-x-ray-wrapper-navigation {
+            .h5p-x-ray-image-navigation {
+              user-select: none;
+              transition: filter $default-transition-duration $default-transition-timing-function;
+            }
+
+            &.h5p-x-ray-image-placeholder {
+              height: $default-image-placeholder-height;
+            }
+          }
+
+          .h5p-x-ray-wrapper-lens {
+            border: 1px solid rgba(255, 255, 255, .5);
+            box-shadow: .1em .1em 1em rgb(0, 0, 0, .5);
+            box-sizing: border-box;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            pointer-events: none;
+            transition: opacity $default-transition-duration $default-transition-timing-function;
+
+            .h5p-x-ray-image-lens {
+              user-select: none;
+            }
+          }
+
+          .h5p-x-ray-wrapper-navigation {
+            max-width: 100%;
+            overflow: hidden;
+            width: 100%;
+          }
+
+          .h5p-x-ray-button-toggle {
+            background: $button-toggle-background-color;
+            border: .1em solid transparent;
+            border-radius: 50%;
+            bottom: $button-toggle-offset;
+            color: $button-toggle-color;
+            font-size: $button-toggle-font-size;
+            height: $button-toggle-size;
+            pointer-events: none;
+            position: absolute;
+            right: $button-toggle-offset;
+            width: $button-toggle-size;
+
+            &::before {
+              content: $icon-button-x-ray;
+              font-family: 'H5PFontAwesome4';
+              left: 50%;
+              position: absolute;
+              top: 50%;
+              transform: translate(-50%, -50%);
+            }
+
+            &.h5p-x-ray-button-toggle-hidden {
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
