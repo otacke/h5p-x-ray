@@ -36,7 +36,7 @@ minify the code.
 
 Change to the repositories parent directory and run
 ```bash
-h5p pack h5p-x-ray ~/H5P.ImageZoom.h5p
+h5p pack h5p-x-ray ~/H5P.XRay.h5p
 ```
 
 in order to pack files into an H5P library file in your home directory. Please note that you will have to make sure to install H5P libraries that this content type may depend on yourself.
