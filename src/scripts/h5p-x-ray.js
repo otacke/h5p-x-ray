@@ -496,7 +496,14 @@ export default class XRay extends H5P.Question {
   handleTouchStart(event) {
     event.preventDefault();
     this.activateXRay();
-    this.setLensPosition({ x: event.touches[0].pageX, y: event.touches[0].pageY });
+
+    const lensRect = this.wrapperLens.getBoundingClientRect();
+    this.setLensPosition(
+      {
+        x: event.touches[0].pageX,
+        y: event.touches[0].pageY - lensRect.height
+      }
+    );
   }
 
   /**
@@ -507,7 +514,14 @@ export default class XRay extends H5P.Question {
     if (event.touches.length !== 1) {
       return;
     }
-    this.setLensPosition({ x: event.touches[0].pageX, y: event.touches[0].pageY });
+
+    const lensRect = this.wrapperLens.getBoundingClientRect();
+    this.setLensPosition(
+      {
+        x: event.touches[0].pageX,
+        y: event.touches[0].pageY - lensRect.height
+      }
+    );
   }
 
   /**
