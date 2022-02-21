@@ -1,0 +1,117 @@
+{
+  "semantics": [
+    {
+      "label": "Afbeelding",
+      "description": "De te gebruiken afbeelding voor de achtergrond."
+    },
+    {
+      "label": "Afbeelding",
+      "description": "De te gebruiken afbeelding voor de voorgrond."
+    },
+    {
+      "label": "Visuele instellingen",
+      "description": "Met deze opties kun je de visuele aspecten regelen.",
+      "fields": [
+        {
+          "label": "Afbeeldingsbreedte",
+          "description": "Selecteer de breedte van de gegeven ruimte die de afbeelding moet beslaan. De hoogte van de afbeelding zal overeenkomstig worden geschaald en nooit de 100% breedte overschrijden.",
+          "options": [
+            {
+              "label": "35 %"
+            },
+            {
+              "label": "50 %"
+            },
+            {
+              "label": "75 %"
+            },
+            {
+              "label": "100 %"
+            },
+            {
+              "label": "De natuurlijke breedte van het beeld"
+            }
+          ]
+        },
+        {
+          "label": "Uitlijning van de afbeelding",
+          "description": "Selecteer waar de afbeelding moet komen te staan ten opzichte van de rest van de inhoud.",
+          "options": [
+            {
+              "label": "links"
+            },
+            {
+              "label": "gecentreerd"
+            },
+            {
+              "label": "rechts"
+            }
+          ]
+        },
+        {
+          "label": "Breedte van de röntgenlens",
+          "description": "Stel de breedte van de röntgenlens in als percentage van de breedte van de afbeelding (bijv. 20%) of als vaste waarde in pixels (bijv. 160px).",
+          "default": "20%"
+        },
+        {
+          "label": "Hoogte van de röntgenlens",
+          "description": "Stel de hoogte van de röntgenlens in als percentage van de hoogte van de afbeelding (bijv. 25%) of als een vaste waarde in pixels (bijv. 90px).",
+          "default": "25%"
+        },
+        {
+          "label": "De afbeelding donkerder maken bij het gebruik van de röntgenlens",
+          "description": "Indien aangevinkt, wordt de afbeelding donkerder om het scherpstellingseffect van de röntgenlens te vergroten."
+        }
+      ]
+    },
+    {
+      "label": "Gedragsinstellingen",
+      "description": "Met deze opties kun je bepalen hoe de taak zich gedraagt.",
+      "fields": [
+        {
+          "label": "Automatisch gebruik van de röntgenlens",
+          "description": "Indien aangevinkt, wordt het beeld automatisch geröntgend als je er met de muis over beweegt. Anders moet de gebruiker de röntgenlens zelf in- en uitschakelen."
+        },
+        {
+          "label": "Verberg de röntgenlens indicator",
+          "description": "De röntgenlens indicator wordt gebruikt als de knop voor het gebruik van het toetsenbord. Het verbergen ervan zal de werking niet verhinderen, maar de gebruikers zullen minder navigatie-informatie hebben."
+        }
+      ]
+    },
+    {
+      "label": "Schermlezer",
+      "fields": [
+        {
+          "label": "Röntgen",
+          "description": "Het label voor röntgenknop (alleen zichtbaar voor de schermlezer).",
+          "default": "Röntgen"
+        },
+        {
+          "label": "Röntgen ingeschakeld.",
+          "description": "Lees wanneer de röntgen werd ingeschakeld.",
+          "default": "Röntgen ingeschakeld."
+        },
+        {
+          "label": "Röntgen uitgeschakeld.",
+          "description": "Lees wanneer de röntgen werd uitgeschakeld.",
+          "default": "Röntgen uitgeschakeld."
+        },
+        {
+          "label": "Instructies",
+          "description": "Instructies voor het gebruik van het toetsenbord. Lees wanneer de röntgenlens is ingeschakeld",
+          "default": "Gebruik de pijltjestoetsen om de röntgenlens te bewegen."
+        },
+        {
+          "label": "Verplaats de lens naar",
+          "description": "Lees wanneer de röntgenlens wordt bewogen. @positionHorizontal en @positionVertical zijn plaatshouders die zullen worden vervangen door de respectievelijke waarden.",
+          "default": "Verplaats de röntgenlens naar @positionHorizontal horizontaal en naar @positionVertical verticaal."
+        },
+        {
+          "label": "Onbekend",
+          "description": "Tekst om op terug te vallen wanneer de positie van de lens niet kan worden bepaald.",
+          "default": "onbekend"
+        }
+      ]
+    }
+  ]
+}
