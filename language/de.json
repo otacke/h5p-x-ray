@@ -1,0 +1,117 @@
+{
+  "semantics": [
+    {
+      "label": "Image",
+      "description": "Bild, das im Hintergrund angezeigt wird."
+    },
+    {
+      "label": "Bild",
+      "description": "Bild, das im Vordergrund angezeigt wird."
+    },
+    {
+      "label": "Darstellungsoptionen",
+      "description": "Diese Optionen erlauben die Kontrolle der Darstellung.",
+      "fields": [
+        {
+          "label": "Bildbreite",
+          "description": "Wähle die Breite des Bildes innerhalb seines Rahmen. Sie wird nie 100% überschreiten und die Höhe wird entsprechend angepasst.",
+          "options": [
+            {
+              "label": "35 %"
+            },
+            {
+              "label": "50 %"
+            },
+            {
+              "label": "75 %"
+            },
+            {
+              "label": "100 %"
+            },
+            {
+              "label": "Eigentliche Breite des Bildes"
+            }
+          ]
+        },
+        {
+          "label": "Bildausrichtung",
+          "description": "Wähle, wo das Bild innerhalb seines Rahmens platziert werden soll.",
+          "options": [
+            {
+              "label": "linksbündig"
+            },
+            {
+              "label": "zentriert"
+            },
+            {
+              "label": "rechtsbündig"
+            }
+          ]
+        },
+        {
+          "label": "Breite des Röntgenblick-Fensters",
+          "description": "Lege die Breite in Prozent der Bildbreite (z.B. 20%) oder als festen Wert in Pixeln (z.B. 160px) fest.",
+          "default": "20%"
+        },
+        {
+          "label": "Höhe des Röntgenblick-Fensters",
+          "description": "Lege die Höhe in Prozent der Bildbreite (z.B. 20%) oder als festen Wert in Pixeln (z.B. 160px) fest.",
+          "default": "25%"
+        },
+        {
+          "label": "Vordergrundbild beim Röntgen abdunkeln",
+          "description": "Wenn eingestellt, wird das Vordergrundbild abgedunkelt, um den Fokussierungseffekt des Röntgens zu verstärken."
+        }
+      ]
+    },
+    {
+      "label": "Verhaltenseinstellungen",
+      "description": "Diese Optionen kontrollieren, wie sich die Aufgabe verhält.",
+      "fields": [
+        {
+          "label": "Automatisches Röntgen",
+          "description": "Wenn diese Option aktiviert ist, wird das Bild automatisch geröntgt, während es darüber bewegt wird. Andernfalls muss der Benutzer das Röntgen ein- und ausschalten."
+        },
+        {
+          "label": "Röntgenindikator ausblenden",
+          "description": "Der Röntgenindikator wird als Taste für die Tastaturbedienung verwendet. Das Ausblenden verhindert nicht, dass er funktioniert, aber die Benutzer haben weniger Navigationsinformationen."
+        }
+      ]
+    },
+    {
+      "label": "Vorlesewerkzeug",
+      "fields": [
+        {
+          "label": "Röntgen",
+          "description": "Beschriftung für Röntgentaste (nur für Vorlesewerkzeuge sichtbar).",
+          "default": "Röntgen"
+        },
+        {
+          "label": "Röntgen aktiviert.",
+          "description": "Wird vorgelesen, wenn der Röntgenblick aktiviert wurde.",
+          "default": "Röntgen aktiviert."
+        },
+        {
+          "label": "Röntgen deaktiviert.",
+          "description": "Wird vorgelesen, wenn der Röntgenblick deaktiviert wurde.",
+          "default": "Röntgen deaktiviert."
+        },
+        {
+          "label": "Anweisungen",
+          "description": "Anweisungen zur Verwendung der Tastatur. Wird vorgelesen, wenn der Röntgenblick aktiviert ist",
+          "default": "Verwende die Pfeiltasten, um den Röntgenblick zu bewegen."
+        },
+        {
+          "label": "Röntgenblick verschoben nach",
+          "description": "Wird vorgelesen, wenn der Röntgenblick bewegt wird. @positionHorizontal und @positionVertical sind Platzhalter, die durch die jeweiligen Werte ersetzt werden.",
+          "default": "Röntgenblick horizontal auf @positionHorizontal und vertikal auf @positionVertical verschoben."
+        },
+        {
+          "label": "Unbekannt",
+          "description": "Ersatztext, wenn die Position des Röntgenblicks nicht bestimmt werden kann.",
+          "default": "Unbekannt"
+        }
+      ]
+    }
+  ]
+}
