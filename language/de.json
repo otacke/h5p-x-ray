@@ -1,7 +1,7 @@
 {
   "semantics": [
     {
-      "label": "Image",
+      "label": "Bild",
       "description": "Bild, das im Hintergrund angezeigt wird."
     },
     {
@@ -55,7 +55,7 @@
         },
         {
           "label": "Höhe des Röntgenblick-Fensters",
-          "description": "Lege die Höhe in Prozent der Bildbreite (z.B. 20%) oder als festen Wert in Pixeln (z.B. 160px) fest.",
+          "description": "Lege die Höhe in Prozent der Bildbreite (z.B. 25%) oder als festen Wert in Pixeln (z.B. 90px) fest.",
           "default": "25%"
         },
         {
@@ -74,7 +74,7 @@
         },
         {
           "label": "Röntgenindikator ausblenden",
-          "description": "Der Röntgenindikator wird als Taste für die Tastaturbedienung verwendet. Das Ausblenden verhindert nicht, dass er funktioniert, aber die Benutzer haben weniger Navigationsinformationen."
+          "description": "Der Röntgenindikator wird als Taste für die Tastaturbedienung verwendet. Das Ausblenden verhindert nicht, dass es funktioniert, aber die Benutzer haben weniger Navigationsinformationen."
         }
       ]
     },
