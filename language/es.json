@@ -1,7 +1,7 @@
 {
   "semantics": [
     {
-      "label": "Imagen",
+      "label": "Image",
       "description": "Imagen a ser usada en el fondo."
     },
     {
