@@ -65,8 +65,8 @@
       ]
     },
     {
-      "label": "Behavioural settings",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Uzvedības iestatītjumi",
+      "description": "Šie parametri ļaus jums kontrolēt uzdevuma uzvedību.",
       "fields": [
         {
           "label": "Automatic X-raying",
