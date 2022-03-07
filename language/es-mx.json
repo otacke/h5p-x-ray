@@ -35,7 +35,7 @@
         },
         {
           "label": "Alineación de la imagen",
-          "description": "Seleccionar donde debería ser posicionada la imagen relativo al resto del contenido,",
+          "description": "Seleccionar donde debería ser posicionada la imagen relativo al resto del contenido.",
           "options": [
             {
               "label": "izquierda"
@@ -98,12 +98,12 @@
         },
         {
           "label": "Instrucciones",
-          "description": "Instrucciones sobre como utilizar el teclado. Leerlas cuando los Rayos X sean activados.",
+          "description": "Instrucciones sobre como utilizar el teclado. Leerlas cuando los Rayos X sean activados",
           "default": "Usar teclas de flechas para mover el lente de los Rayos X."
         },
         {
           "label": "Se movió el lente a",
-          "description": "Leer cuando el lente sea movido. @positionHorizontal y  @positionVertical son reemplazables que serán reemplazados por los valores respectivos.",
+          "description": "Leer cuando el lente sea movido. @positionHorizontal y @positionVertical son reemplazables que serán reemplazados por los valores respectivos.",
           "default": "Lente movido a @positionHorizontal horizontalmente y a @positionVertical verticalmente."
         },
         {
