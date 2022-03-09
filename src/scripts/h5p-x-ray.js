@@ -30,9 +30,15 @@ export default class XRay extends H5P.Question {
     // Dictionary provides default values
     Dictionary.fill(this.params.a11y);
 
+    const lensWidth = this.sanitizeCSS(this.params.visual.xRayLensWidth, { min: 1, default: '20 %' });
+    const lensHeight = this.sanitizeCSS(this.params.visual.xRayLensHeight, { min: 1, default: '25 %' });
+
+    this.lensWidthUnit = (lensWidth === null) ? null : (lensWidth.split(' '))[1];
+    this.lensHeightUnit = (lensHeight === null) ? null : (lensHeight.split(' '))[1];
+
     this.xRayLensSize = {
-      width: this.sanitizeCSS(this.params.visual.xRayLensWidth, { min: 1, default: '20 %' }),
-      height: this.sanitizeCSS(this.params.visual.xRayLensHeight, { min: 1, default: '25 %' })
+      width: lensWidth,
+      height: lensHeight
     };
   }
 
@@ -317,7 +323,24 @@ export default class XRay extends H5P.Question {
       y: Util.project(cappedPosition.y, lensOffsets.minY, lensOffsets.maxY, 0, 99.5)
     };
 
-    this.imageLens.style.transformOrigin = `${cappedPositionPercentage.x}% ${cappedPositionPercentage.y}%`;
+    if (this.lensWidthUnit === '%' && this.lensHeightUnit === '%') {
+      this.imageLens.style.transformOrigin = `${cappedPositionPercentage.x}% ${cappedPositionPercentage.y}%`;
+    }
+    else {
+      if (this.lensWidthUnit === 'px') {
+        this.imageLens.style.left = `${-lensPosition.x}px`;
+      }
+      else {
+        this.imageLens.style.transformOrigin = `${cappedPositionPercentage.x}% 0%`;
+      }
+
+      if (this.lensHeightUnit === 'px') {
+        this.imageLens.style.top = `${-lensPosition.y}px`;
+      }
+      else {
+        this.imageLens.style.transformOrigin = `0% ${cappedPositionPercentage.y}%`;
+      }
+    }
   }
 
   /**
@@ -399,6 +422,28 @@ export default class XRay extends H5P.Question {
 
     this.toggleButton.addEventListener('keydown', (event) => {
       this.handleKeydown(event);
+    });
+
+    this.on('resize', () => {
+
+      clearTimeout(this.resizeTimeout);
+      this.resizeTimeout = setTimeout(() => {
+        if (this.lensWidthUnit === 'px') {
+          const imageNavigationRect = this.imageNavigation.getBoundingClientRect();
+          this.imageLens.style.width = `${imageNavigationRect.width}px`;
+        }
+        else {
+          this.imageLens.style.width = `100%`;
+        }
+
+        if (this.lensHeightUnit === 'px') {
+          const imageNavigationRect = this.imageNavigation.getBoundingClientRect();
+          this.imageLens.style.height = `${imageNavigationRect.height}px`;
+        }
+        else {
+          this.imageLens.style.height = `100%`;
+        }
+      }, 0); // Required for initial size on attach
     });
   }
 

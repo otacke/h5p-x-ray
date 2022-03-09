@@ -76,6 +76,7 @@
             transition: opacity $default-transition-duration $default-transition-timing-function;
 
             .h5p-x-ray-image-lens {
+              position: absolute;
               user-select: none;
             }
           }
