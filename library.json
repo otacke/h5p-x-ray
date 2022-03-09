@@ -3,7 +3,7 @@
   "description": "Add an x-ray effect to images",
   "majorVersion": 0,
   "minorVersion": 1,
-  "patchVersion": 0,
+  "patchVersion": 1,
   "runnable": 1,
   "author": "Oliver Tacke",
   "license": "MIT",
