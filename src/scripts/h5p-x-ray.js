@@ -31,8 +31,8 @@ export default class XRay extends H5P.Question {
     Dictionary.fill(this.params.a11y);
 
     this.xRayLensSize = {
-      width: this.sanititzeCSS(this.params.visual.xRayLensWidth, { min: 1, default: '20 %' }),
-      height: this.sanititzeCSS(this.params.visual.xRayLensHeight, { min: 1, default: '25 %' })
+      width: this.sanitizeCSS(this.params.visual.xRayLensWidth, { min: 1, default: '20 %' }),
+      height: this.sanitizeCSS(this.params.visual.xRayLensHeight, { min: 1, default: '25 %' })
     };
   }
 
@@ -45,7 +45,7 @@ export default class XRay extends H5P.Question {
    * @param {string} [params.default] Default value.
    * @return {string|null} Value and unit separated by space or null.
    */
-  sanititzeCSS(cssValue, params = {}) {
+  sanitizeCSS(cssValue, params = {}) {
     params.default = typeof params.default === 'string' ? params.default : null;
 
     if (typeof cssCalue === 'number') {
