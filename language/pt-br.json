@@ -1,0 +1,117 @@
+{
+  "semantics": [
+    {
+      "label": "Imagem",
+      "description": "Imagem a ser usada no plano de fundo."
+    },
+    {
+      "label": "Imagem",
+      "description": "Imagem a ser usada em primeiro plano."
+    },
+    {
+      "label": "Configurações visuais",
+      "description": "Estas opções permitem controlar os aspectos visuais.",
+      "fields": [
+        {
+          "label": "Largura da imagem",
+          "description": "Selecionar a largura que a imagem deve cobrir do espaço dado . A altura da imagem será dimensionada de acordo e nunca excederá 100% da largura.",
+          "options": [
+            {
+              "label": "35 %"
+            },
+            {
+              "label": "50 %"
+            },
+            {
+              "label": "75 %"
+            },
+            {
+              "label": "100 %"
+            },
+            {
+              "label": "Largura natural da imagem"
+            }
+          ]
+        },
+        {
+          "label": "Alinhamento de imagem",
+          "description": "Selecionar onde a imagem deve ser posicionada em relação ao restante do conteúdo.",
+          "options": [
+            {
+              "label": "esquerda"
+            },
+            {
+              "label": "centro"
+            },
+            {
+              "label": "direita"
+            }
+          ]
+        },
+        {
+          "label": "Largura da lente de raios-X",
+          "description": "Definir a largura da lente de raios-X como porcentagem da largura da imagem (por exemplo, 20%) ou como um valor fixo em pixels (por exemplo, 160px).",
+          "default": "20%"
+        },
+        {
+          "label": "Altura da lente de raios-X",
+          "description": "Definir a altura da lente de raios-X como porcentagem da altura da imagem (por exemplo, 25%) ou como um valor fixo em pixels (por exemplo, 90px).",
+          "default": "25%"
+        },
+        {
+          "label": "Escurecer a imagem em primeiro plano no raio-X",
+          "description": "Se definido, a imagem de primeiro plano escurecerá para fortalecer o efeito de foco do raio-X."
+        }
+      ]
+    },
+    {
+      "label": "Configurações comportamentais",
+      "description": "Estas opções permitem controlar como a tarefa se comporta.",
+      "fields": [
+        {
+          "label": "Raio-X automático",
+          "description": "Se marcada, a imagem é radiografada automaticamente ao passar o mouse sobre ela. Caso contrário, o usuário precisa ativar e desativar o raio-X."
+        },
+        {
+          "label": "Ocultar indicador de raio-X",
+          "description": "O indicador de raio-X é usado como um botão para uso do teclado. Ocultá-lo não impedirá que funcione, mas os usuários terão menos informações de navegação."
+        }
+      ]
+    },
+    {
+      "label": "Leitor de Tela",
+      "fields": [
+        {
+          "label": "Raio-X",
+          "description": "Rótulo para o botão de raio-X (visível apenas para o leitor de tela).",
+          "default": "Raio-X"
+        },
+        {
+          "label": "Raio-X ativado.",
+          "description": "Ler quando o Raio-X for ativado.",
+          "default": "Raio-X ativado."
+        },
+        {
+          "label": "Raio-X desativado.",
+          "description": "Ler quando o raio-X for desativado.",
+          "default": "Raio-X desativado."
+        },
+        {
+          "label": "Instruções",
+          "description": "Instruções sobre como usar o teclado. Ler quando o raio-X for ativado",
+          "default": "Use as teclas de seta para mover as lentes de raio-X."
+        },
+        {
+          "label": "Lente movida para",
+          "description": "Ler quando a lente de raio-X for movida. @positionHorizontal e @positionVertical são variáveis que serão substituídas pelos respectivos valores.",
+          "default": "Lente movida para @positionHorizontal horizontalmente e para @positionVertical verticalmente."
+        },
+        {
+          "label": "Desconhecido",
+          "description": "Texto alternativo para quando a posição da lente não puder ser determinada.",
+          "default": "desconhecido"
+        }
+      ]
+    }
+  ]
+}
