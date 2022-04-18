@@ -65,7 +65,7 @@
       ]
     },
     {
-      "label": "Configurações comportamentais",
+      "label": "Behavioural settings",
       "description": "Estas opções permitem controlar como a tarefa se comporta.",
       "fields": [
         {
