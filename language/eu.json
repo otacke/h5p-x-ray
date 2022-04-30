@@ -1,0 +1,117 @@
+{
+  "semantics": [
+    {
+      "label": "Irudia",
+      "description": "Atzeko planoan erabili beharreko irudia."
+    },
+    {
+      "label": "Irudia",
+      "description": "Aurreko planoan erabili beharreko irudia."
+    },
+    {
+      "label": "Ezarpen bisualak",
+      "description": "Aukera hauek aldagai bisualak kontrolatzea ahalbidetzen dute.",
+      "fields": [
+        {
+          "label": "Irudiaren zabalera",
+          "description": "Aukeratu emandako espazioan irudiak beteko duen zabalera. Irudiaren altuera horren arabera eskalatuko da eta inoiz ez du %100 gaindituko.",
+          "options": [
+            {
+              "label": "%35"
+            },
+            {
+              "label": "%50"
+            },
+            {
+              "label": "%75"
+            },
+            {
+              "label": "%100"
+            },
+            {
+              "label": "Irudiaren zabalera naturala"
+            }
+          ]
+        },
+        {
+          "label": "Irudiaren lerrokatzea",
+          "description": "Aukeratu irudia beste edukiarekiko nola kokatuko den.",
+          "options": [
+            {
+              "label": "ezkerra"
+            },
+            {
+              "label": "erdia"
+            },
+            {
+              "label": "eskuina"
+            }
+          ]
+        },
+        {
+          "label": "X-izpien lentearen zabalera",
+          "description": "Zehaztu X-izpien lentearen zabalera irudiaren zabaleraren ehuneko gisa (esaterako %20) ala pixeletan zehaztutako balio gisa (esaterako 160px).",
+          "default": "%20"
+        },
+        {
+          "label": "X-izpien lentearen altuera",
+          "description": "Zehaztu X-izpien lentearen altuera irudiaren altueraren ehuneko gisa (esaterako %25) ala pixeletan zehaztutako balio gisa (esaterako 90px).",
+          "default": "%25"
+        },
+        {
+          "label": "Ilundu aurreko planoko irudia X-izpiekin",
+          "description": "Markatuz gero, aurreko planoko irudia ilunduko da egindako X-izpien foku-efektua indartzeko."
+        }
+      ]
+    },
+    {
+      "label": "Portaeren ezarpenak",
+      "description": "Aukera hauek lanaren portaera kontrolatzea ahalbidetzen dizute.",
+      "fields": [
+        {
+          "label": "X-izpi automatikoak",
+          "description": "Markatuz gero, irudiaren X-izpiak egiten dira sagua gainean jartzean. Bestela, erabiltzaileak X-izpiak gaitu eta desgaitu beharko ditu."
+        },
+        {
+          "label": "Ezkutatu X-izpien adierazlea",
+          "description": "X-izpien adierazlea teklatu erabilerarako botoi gisa erabiltzen da. Ezkutatzeak ez du erabilera saihestuko, baina erabiltzaileek nabigaziorako informazio gutxiago izango dute."
+        }
+      ]
+    },
+    {
+      "label": "Pantaila-irakurlea",
+      "fields": [
+        {
+          "label": "X-Izpiak",
+          "description": "X-izpien botoiaren etiketa (soilik ikusgai pantaila-irakurleentzako).",
+          "default": "X-Izpiak"
+        },
+        {
+          "label": "X-Izpiak gaitu dira.",
+          "description": "Irakurri X-izpiak gaitzen direnean.",
+          "default": "X-Izpiak gaitu dira."
+        },
+        {
+          "label": "X-Izpiak desgaitu dira.",
+          "description": "Irakurri X-izpiak desgaitzen direnean.",
+          "default": "X-izpiak desgaitu dira."
+        },
+        {
+          "label": "Argibideak",
+          "description": "Teklatua nola erabili azaltzen duten argibideak. Irakurri X-izpiak gaitzen direnean",
+          "default": "Erabili gezien teklak X-izpien lentea mugitzeko."
+        },
+        {
+          "label": "Lentea mugituta hona:",
+          "description": "Irakurri X-izpien lentea mugitzean. @positionHorizontal eta @positionVertical dagozkion balioekin ordezkatuko diren leku-markak dira.",
+          "default": "Lentea mugitu da @positionHorizontal(e)ra horizontalki eta @positionVertical(e)ra bertikalki."
+        },
+        {
+          "label": "Ezezaguna",
+          "description": "B planaren testua lentearen kokapena ezin denean zehaztu.",
+          "default": "ezezaguna"
+        }
+      ]
+    }
+  ]
+}
