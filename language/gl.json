@@ -1,0 +1,117 @@
+{
+  "semantics": [
+    {
+      "label": "Imaxe",
+      "description": "Imaxe para usar no fondo."
+    },
+    {
+      "label": "Imaxe",
+      "description": "Imaxe que se utilizará en primeiro plano."
+    },
+    {
+      "label": "Configuración visual",
+      "description": "Estas opcións permítenche controlar os aspectos visuais.",
+      "fields": [
+        {
+          "label": "Anchura da imaxe",
+          "description": "Seleccione a anchura do espazo dado que debe cubrir a imaxe. A altura da imaxe escalarase en consecuencia e nunca excederá o 100% da anchura.",
+          "options": [
+            {
+              "label": "35 %"
+            },
+            {
+              "label": "50 %"
+            },
+            {
+              "label": "75 %"
+            },
+            {
+              "label": "100 %"
+            },
+            {
+              "label": "Anchura natural da imaxe"
+            }
+          ]
+        },
+        {
+          "label": "Aliñación da imaxe",
+          "description": "Seleccione onde se debe colocar a imaxe en relación co resto do contido.",
+          "options": [
+            {
+              "label": "esquerda"
+            },
+            {
+              "label": "centro"
+            },
+            {
+              "label": "dereita"
+            }
+          ]
+        },
+        {
+          "label": "Anchura da lente de raios X",
+          "description": "Establece a anchura da lente do zoom como porcentaxe da anchura da imaxe (por exemplo, 20%) ou como un valor fixo en píxeles (por exemplo, 160px).",
+          "default": "20%"
+        },
+        {
+          "label": "Altura da lente de raios X",
+          "description": "Establece a anchura da lente do zoom como porcentaxe da anchura da imaxe (por exemplo, 20%) ou como un valor fixo en píxeles (por exemplo, 160px).",
+          "default": "25%"
+        },
+        {
+          "label": "Escurecer a imaxe en primeiro ao facer raios X",
+          "description": "Se se define, a imaxe en primeiro plano escurecerase para reforzar o efecto de enfoque dos raios X."
+        }
+      ]
+    },
+    {
+      "label": "Configuración do comportamento",
+      "description": "Estas opcións permitiranche controlar o comportamento da tarefa.",
+      "fields": [
+        {
+          "label": "Raios X automáticos",
+          "description": "Se está marcada, farase raios X da imaxe automaticamente mentres se pasa o rato. En caso contrario, o usuario debe activar e desactivar os raios X."
+        },
+        {
+          "label": "Agachar o indicador de raios X",
+          "description": "O indicador de raios X úsase como botón para usar o teclado. Ocultalo non impedirá que funcione, pero os usuarios terán menos información de navegación."
+        }
+      ]
+    },
+    {
+      "label": "Lector de pantalla",
+      "fields": [
+        {
+          "label": "Raios X",
+          "description": "Etiqueta para o botón de raios X (só visible para o lector de pantalla).",
+          "default": "Raios X"
+        },
+        {
+          "label": "Raios X activados.",
+          "description": "Le cando se activaron os raios X.",
+          "default": "Raios X activados."
+        },
+        {
+          "label": "Raios X desactivados.",
+          "description": "Le cando se desactivaron os raios X.",
+          "default": "Raios X desactivados."
+        },
+        {
+          "label": "Instrucións",
+          "description": "Instrucións sobre como usar o teclado. Le cando se activan os raios X",
+          "default": "Usa as frechas de dirección para mover a lente de raios X."
+        },
+        {
+          "label": "Moveuse a lente a",
+          "description": "Le cando se move a lente de raios X. @positionHorizontal e @positionVertical son textos por defecto que se substituirán polos valores respectivos.",
+          "default": "Moveuse a lente a @positionHorizontal horizontalmente e a @positionVertical verticalmente."
+        },
+        {
+          "label": "Descoñecido",
+          "description": "Texto alternativo para cando non se pode determinar a posición da lente.",
+          "default": "descoñecido"
+        }
+      ]
+    }
+  ]
+}
