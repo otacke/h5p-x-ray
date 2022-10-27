@@ -1,20 +1,20 @@
 {
   "semantics": [
     {
-      "label": "Image",
-      "description": "Image to be used in the background."
+      "label": "Paveikslas",
+      "description": "Fono paveikslas."
     },
     {
-      "label": "Image",
-      "description": "Image to be used in the foreground."
+      "label": "Paveikslas",
+      "description": "Pirmo plano paveikslas"
     },
     {
-      "label": "Visual settings",
-      "description": "These options will let you control visual aspects.",
+      "label": "Išvaizdos nustatymai",
+      "description": "Šios parinktys leis jums valdyti vizualinius aspektus.",
       "fields": [
         {
-          "label": "Image width",
-          "description": "Select the width of the space given that the image should cover. The image's height will be scaled accordingly and never exceed 100% width.",
+          "label": "Paveikslo plotis",
+          "description": "Pasirinkite vietos, kurią uždengs paveikslas, plotį. Paveikslo aukštis bus priderintas atitinkamai, bet neviršys 100% pločio.",
           "options": [
             {
               "label": "35 %"
@@ -29,87 +29,87 @@
               "label": "100 %"
             },
             {
-              "label": "Image's natural width"
+              "label": "Tikrasis paveikslo plotis"
             }
           ]
         },
         {
-          "label": "Image alignment",
-          "description": "Select where the image should be positioned relative to the rest of the content.",
+          "label": "Paveikslo lygiavimas",
+          "description": "Pasirinkite, kur vaizdas turėtų būti išdėstytas, palyginti su likusiu turiniu.",
           "options": [
             {
-              "label": "left"
+              "label": "Kairė"
             },
             {
-              "label": "center"
+              "label": "centras"
             },
             {
-              "label": "right"
+              "label": "dešinė"
             }
           ]
         },
         {
-          "label": "X-ray lens width",
-          "description": "Set the width of the X-ray lens as percentage of the image's width (e.g. 20%) or as a fixed value in pixels (e.g. 160px).",
+          "label": "X-spindulių linzės plotis",
+          "description": "Nustatykite X-spindulių objektyvo plotį kaip vaizdo pločio procentą (pvz., 20 %) arba kaip fiksuotą reikšmę pikseliais (pvz., 160 pikselių).",
           "default": "20%"
         },
         {
-          "label": "X-ray lens height",
-          "description": "Set the height of the X-ray lens as percentage of the image's height (e.g. 25%) or as a fixed value in pixels (e.g. 90px).",
+          "label": "X-spindulių linzės aukštis",
+          "description": "Nustatykite x-spindulių objektyvo aukštį kaip vaizdo aukščio procentą (pvz., 25 %) arba kaip fiksuotą reikšmę pikseliais (pvz., 90 pikselių).",
           "default": "25%"
         },
         {
-          "label": "Darken foreground image on X-raying",
-          "description": "If set, the foreground image will darken to strengthen the focussing effect of X-raying."
+          "label": "Patamsinti priekinio plano vaizdą X-spinduliuose",
+          "description": "Jei nustatyta, priekinio plano vaizdas patamsės, kad sustiprintų X-spindulių fokusavimo efektą."
         }
       ]
     },
     {
-      "label": "Behavioural settings",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Veikimo nustatymai",
+      "description": "Šios parinktys leis jums valdyti, kaip veikia užduotis.",
       "fields": [
         {
-          "label": "Automatic X-raying",
-          "description": "If checked, the image gets X-rayed automatically while hovering it. Otherwise, the user needs to toggle X-Raying on and off."
+          "label": "Automatinis X-spiunduliavimas",
+          "description": "Jei pažymėta, vaizdas bus automatiškai nufotografuotas X-spinduliais, kai jį užvedate. Kitu atveju vartotojas turi įjungti ir išjungti X-spindulius."
         },
         {
-          "label": "Hide X-ray indicator",
-          "description": "The X-ray indicator is used as the button for keyboard use. Hiding it will not prevent it from working, but users will have less navigational information."
+          "label": "Slėpti X-spindulių indikatorių",
+          "description": "X-spindulių indikatorius naudojamas kaip klaviatūros mygtukas. Paslėpus jį, jis neveiks, tačiau vartotojai turės mažiau naršymo informacijos."
         }
       ]
     },
     {
-      "label": "Screenreader",
+      "label": "Ekrano skaitytuvas",
       "fields": [
         {
-          "label": "X-Ray",
-          "description": "Label for X-ray button (only visible to screenreader).",
-          "default": "X-Ray"
+          "label": "X-spinduliai",
+          "description": "X-spindulių mygtuko pavadinimas (matomas tik ekrano skaitytuvui).",
+          "default": "X-spinduliai"
         },
         {
-          "label": "X-Ray activated.",
-          "description": "Read when the X-Ray was activated.",
-          "default": "X-Ray activated."
+          "label": "X-spinduliai įjungti.",
+          "description": "Skaityti, jei X-spinduliai buvo įjungti.",
+          "default": "X-spinduliai įjungti."
         },
         {
-          "label": "X-ray deactivated.",
-          "description": "Read when the X-ray was deactivated.",
-          "default": "X-Ray deactivated."
+          "label": "X-spinduliai išjungti.",
+          "description": "Skaityti, jei X-spinduliai buvo išjungti.",
+          "default": "X-spinduliai išjungti."
         },
         {
-          "label": "Instructions",
-          "description": "Instructions on how to use the keyboard. Read when the X-ray is activated",
-          "default": "Use arrow keys to move X-ray lens."
+          "label": "Instrukcijos",
+          "description": "Instrukcijos, kaip naudotis klaviatūra. Skaitykite, kai ijugiami X-spiduliai.",
+          "default": "Naudokite rodyklių klavišus, kad perkeltumėte X-spindulių objektyvą."
         },
         {
-          "label": "Moved lens to",
-          "description": "Read when the X-ray lens is moved. @positionHorizontal and @positionVertical are placeholders that will be replaced by the respective values.",
-          "default": "Moved lens to @positionHorizontal horizontally and to @positionVertical vertically."
+          "label": "Linzės perkeltos",
+          "description": "Skaitykite, jei perkeliamas X-spindulių linzės. @positionHorizontal ir @positionVertical yra nurodytos vietos, kurios bus pakeistos atitinkamomis reikšmėmis.",
+          "default": "Linzės perkeltos į @positionHorizontal horizontaliai ir į @positionVertical vertikaliai."
         },
         {
-          "label": "Unknown",
-          "description": "Fallback text for when the position of the lens cannot be determined.",
-          "default": "unknown"
+          "label": "Nežinomas",
+          "description": "Atsarginis tekstas, skirtas, jei negalima nustatyti linzių padėties.",
+          "default": "nežinomas"
         }
       ]
     }
