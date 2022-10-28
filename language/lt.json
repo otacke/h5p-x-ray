@@ -1,12 +1,12 @@
 {
   "semantics": [
     {
-      "label": "Paveikslas",
-      "description": "Fono paveikslas."
+      "label": "Paveikslėlis",
+      "description": "Fono paveikslėlis."
     },
     {
-      "label": "Paveikslas",
-      "description": "Pirmo plano paveikslas"
+      "label": "Paveikslėlis",
+      "description": "Pirmo plano paveikslėlis."
     },
     {
       "label": "Išvaizdos nustatymai",
@@ -98,7 +98,7 @@
         },
         {
           "label": "Instrukcijos",
-          "description": "Instrukcijos, kaip naudotis klaviatūra. Skaitykite, kai ijugiami X-spiduliai.",
+          "description": "Instrukcijos, kaip naudotis klaviatūra. Skaitykite, kai įjungti X-spinduliai",
           "default": "Naudokite rodyklių klavišus, kad perkeltumėte X-spindulių objektyvą."
         },
         {
