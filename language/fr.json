@@ -1,0 +1,117 @@
+{
+  "semantics": [
+    {
+      "label": "Image",
+      "description": "Image à utiliser en fond."
+    },
+    {
+      "label": "Image",
+      "description": "Image à utiliser en premier plan."
+    },
+    {
+      "label": "Paramètres visuels",
+      "description": "Ces options vous permettront de contrôler les aspects visuels.",
+      "fields": [
+        {
+          "label": "Largeur de l’image",
+          "description": "Sélectionner la largeur de l'espace donné que l'image doit couvrir. La hauteur de l'image sera mise à l'échelle en conséquence et ne dépassera jamais 100 % de la largeur.",
+          "options": [
+            {
+              "label": "35 %"
+            },
+            {
+              "label": "50 %"
+            },
+            {
+              "label": "75 %"
+            },
+            {
+              "label": "100 %"
+            },
+            {
+              "label": "Largeur naturelle de l’image"
+            }
+          ]
+        },
+        {
+          "label": "Alignement de l'image",
+          "description": "Sélectionner l'endroit où l'image doit être positionnée par rapport au reste du contenu.",
+          "options": [
+            {
+              "label": "gauche"
+            },
+            {
+              "label": "centre"
+            },
+            {
+              "label": "droite"
+            }
+          ]
+        },
+        {
+          "label": "Largeur de la lentille à rayons X",
+          "description": "Définir la largeur de la lentille à rayons X en pourcentage de la largeur de l'image (p.ex. 20 %) ou comme valeur fixe en pixels (p.ex., 160px).",
+          "default": "20 %"
+        },
+        {
+          "label": "Hauteur de la lentille à rayons X",
+          "description": "Définir la hauteur de la lentille à rayons X en pourcentage de la hauteur de l'image (p.ex. 25 %) ou comme valeur fixe en pixels (p.ex. 90px).",
+          "default": "25 %"
+        },
+        {
+          "label": "Assombrir l'image de premier plan lors de la radiographie",
+          "description": "Si ce paramètre est défini, l'image de premier plan s'assombrit pour renforcer l'effet de focalisation de la radiographie."
+        }
+      ]
+    },
+    {
+      "label": "Paramètres comportementaux",
+      "description": "Ces options vous permettront de contrôler le déroulement de la tâche.",
+      "fields": [
+        {
+          "label": "Radiographie automatique",
+          "description": "Si cette option est cochée, l'image est automatiquement radiographiée lorsqu'on la survole. Sinon, l'utilisateur doit activer et désactiver le rayon X."
+        },
+        {
+          "label": "Masquer l'indicateur de rayons X",
+          "description": "L'indicateur de rayons X est utilisé comme touche pour l'utilisation du clavier. Le masquer n'empêchera pas son fonctionnement, mais les utilisateurs disposeront de moins d'informations de navigation."
+        }
+      ]
+    },
+    {
+      "label": "Synthèse texte-parole",
+      "fields": [
+        {
+          "label": "Rayon-X",
+          "description": "Vignette pour la touche à rayons X (visible uniquement pour la synthèse texte-parole).",
+          "default": "Rayon-X"
+        },
+        {
+          "label": "Rayon X activé.",
+          "description": "Lire quand le rayon X a été activé.",
+          "default": "Rayon X activé."
+        },
+        {
+          "label": "Rayon-X désactivé.",
+          "description": "Lire quand le rayon X a été désactivé.",
+          "default": "Rayon-X désactivé."
+        },
+        {
+          "label": "Instructions",
+          "description": "Instructions sur la façon d'utiliser le clavier. Lire quand le rayon X est activé",
+          "default": "Utiliser les touches fléchées pour déplacer la lentille à rayons X."
+        },
+        {
+          "label": "Déplacement de la lentille à",
+          "description": "Lire lorsque la lentille à rayons X est déplacée. @positionHorizontal et @positionVertical sont des espaces réservés qui seront remplacés par les valeurs respectives.",
+          "default": "Déplacement de la lentille à @positionHorizontall'horizontal et à@positionVertical la verticale."
+        },
+        {
+          "label": "Inconnu",
+          "description": "Texte de remplacement lorsque la position de la lentille ne peut être déterminée.",
+          "default": "inconnu"
+        }
+      ]
+    }
+  ]
+}

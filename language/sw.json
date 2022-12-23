@@ -1,0 +1,117 @@
+{
+  "semantics": [
+    {
+      "label": "Picha",
+      "description": "Picha ya kutumika kwa nyuma."
+    },
+    {
+      "label": "Picha",
+      "description": "Picha itakayotumika mbele."
+    },
+    {
+      "label": "Mipangilio ya kuona",
+      "description": "Chaguzi hizi zitakuwezesha kudhibiti vipengele vya kuona.",
+      "fields": [
+        {
+          "label": "Upana wa picha",
+          "description": "Chagua upana wa sehemu kutokana na kwamba picha inapaswa kufunika. Urefu wa picha itakuwa kupunguzwa ipasavyo na kamwe kisichozidi 100% upana.",
+          "options": [
+            {
+              "label": "35 %"
+            },
+            {
+              "label": "50 %"
+            },
+            {
+              "label": "75 %"
+            },
+            {
+              "label": "100 %"
+            },
+            {
+              "label": "Upana wa asili wa picha"
+            }
+          ]
+        },
+        {
+          "label": "Usawazishaji wa picha",
+          "description": "Chagua mahali ambapo picha inapaswa kuwekwa kulingana na maudhui yaliyosalia.",
+          "options": [
+            {
+              "label": "kushoto"
+            },
+            {
+              "label": "kati"
+            },
+            {
+              "label": "kulia"
+            }
+          ]
+        },
+        {
+          "label": "Upana wa lenzi ya eksirei /X-ray",
+          "description": "Weka upana wa lenzi ya eksirei kama asilimia ya upana wa picha (kwa mfano 20%) au kama thamani isiyobadilika katika saizi (kwa mfano 160px).",
+          "default": "20%"
+        },
+        {
+          "label": "Lenzi ya eksirei kwa urefu",
+          "description": "Weka urefu wa lenzi ya eksirei kama asilimia ya urefu wa picha (kwa mfano 25%) au kama thamani isiyobadilika katika saizi (kwa mfano 90px).",
+          "default": "25%"
+        },
+        {
+          "label": "Picha ya mbele ya giza kwenye kupiga eksirei",
+          "description": "Ikiwekwa, picha ya mbele itatiwa giza ili kuimarisha athari ya kuzingatia picha za eksirei."
+        }
+      ]
+    },
+    {
+      "label": "Mipangilio ya tabia",
+      "description": "Chaguzi hizi zitakuwezesha kudhibiti jinsi kazi inavyofanya.",
+      "fields": [
+        {
+          "label": "Kupiga picha ya eksirei kiotomatiki",
+          "description": "Ikiwa imechaguliwa, picha inapata eksirei kiotomatiki wakati wa kuipeperusha. Vinginevyo, mtumiaji anahitaji kugeuza eksirei kuwasha na kuzima."
+        },
+        {
+          "label": "Ficha kiashiria cha eksirei",
+          "description": "Kiashiria cha eksirei hutumiwa kama kitufe cha kutumia kibodi. Kuficha hakutaizuia isifanye kazi, lakini watumiaji watakuwa na taarifa chache za urambazaji."
+        }
+      ]
+    },
+    {
+      "label": "Kisomaji skrini",
+      "fields": [
+        {
+          "label": "Eksirei",
+          "description": "Lebo ya kitufe cha eksirei (kinachoonekana tu kwa kisomaji cha skrini).",
+          "default": "Eksirei"
+        },
+        {
+          "label": "Eksirei imeamilishwa.",
+          "description": "Alisoma wakati eksirei ilikuwa imeamilishwa.",
+          "default": "Eksirei imeamilishwa."
+        },
+        {
+          "label": "Eksirei imezimwa.",
+          "description": "Alisoma wakati eksirei ilikuwa imezimwa.",
+          "default": "Eksirei imefungwa."
+        },
+        {
+          "label": "Maelekezo",
+          "description": "Maelekezo ya jinsi ya kutumia kibodi. Soma wakati eksirei imeamilishwa",
+          "default": "Tumia vitufe vya mshale kusogeza lenzi ya eksirei."
+        },
+        {
+          "label": "Imesogezwa kwenye lenzi",
+          "description": "Soma wakati lenzi ya eksirei inapohamishwa. @positionHorizontal na @positionVertical ni washikaji ambao watabadilishwa na maadili husika.",
+          "default": "Umesogezwa kwenye lenzi @positionHorizontal kwa usawa na @positionVertical kwa wima."
+        },
+        {
+          "label": "Isiyojulikana",
+          "description": "Maandishi ya kurudi nyuma wakati nafasi ya lenzi haiwezi kuamua.",
+          "default": "haijulikani"
+        }
+      ]
+    }
+  ]
+}
