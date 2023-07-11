@@ -1,10 +1,9 @@
-import Dictionary from './h5p-x-ray-dictionary';
-import Util from './h5p-x-ray-util';
+import Dictionary from '@services/dictionary';
+import Util from '@services/util';
 
 export default class XRay extends H5P.Question {
   /**
-   * @constructor
-   *
+   * @class
    * @param {object} params Parameters passed by the editor.
    * @param {number} contentId Content's id.
    */
@@ -23,12 +22,21 @@ export default class XRay extends H5P.Question {
       behaviour: {
         autoXRay: true,
         hideXRayIndicator: false
+      },
+      a11y: {
+        xRay: 'X-ray',
+        xRayOn: 'X-ray activated.',
+        xRayOff: 'X-ray deactivated.',
+        instructions: 'Use arrow keys to move X-ray lens.',
+        movedLensTo: 'Moved lens to @positionHorizontal horizontally and to @positionVertical vertically.',
+        unknown: 'unknown'
       }
     }, params);
     this.contentId = contentId;
 
-    // Dictionary provides default values
-    Dictionary.fill(this.params.a11y);
+    // Fill dictionary
+    this.dictionary = new Dictionary();
+    this.dictionary.fill({ l10n: this.params.l10n, a11y: this.params.a11y });
 
     const lensWidth = this.sanitizeCSS(this.params.visual.xRayLensWidth, { min: 1, default: '20 %' });
     const lensHeight = this.sanitizeCSS(this.params.visual.xRayLensHeight, { min: 1, default: '25 %' });
@@ -45,11 +53,11 @@ export default class XRay extends H5P.Question {
   /**
    * SanitizeCSS value.
    * @param {string|number} cssValue CSS value.
-   * @param {object} [params={}] Parameters.
+   * @param {object} [params] Parameters.
    * @param {number} [params.min] Minimum numerical value.
    * @param {number} [params.max] Maximum numerical value.
    * @param {string} [params.default] Default value.
-   * @return {string|null} Value and unit separated by space or null.
+   * @returns {string|null} Value and unit separated by space or null.
    */
   sanitizeCSS(cssValue, params = {}) {
     params.default = typeof params.default === 'string' ? params.default : null;
@@ -180,7 +188,7 @@ export default class XRay extends H5P.Question {
       this.toggleButton.classList.add('h5p-x-ray-button-toggle-hidden');
     }
     this.toggleButton.setAttribute('aria-pressed', 'false');
-    this.toggleButton.setAttribute('aria-label', Dictionary.get('magnify'));
+    this.toggleButton.setAttribute('aria-label', this.dictionary.get('magnify'));
     this.displayNavigation.appendChild(this.toggleButton);
 
     this.container.appendChild(this.displays);
@@ -213,7 +221,7 @@ export default class XRay extends H5P.Question {
 
   /**
    * Get X-ray lens width and height as percentage.
-   * @return {object} X-ray lens width and height as percentage.
+   * @returns {object} X-ray lens width and height as percentage.
    */
   getLensSize() {
     let imageRect;
@@ -252,20 +260,20 @@ export default class XRay extends H5P.Question {
 
   /**
    * Get Lens position as rounded percentage.
-   * @return {object} Position with x and y part.
+   * @returns {object} Position with x and y part.
    */
   getLensPosition() {
     let positions = this.imageLens.style.transformOrigin.split(' ');
     if (
       positions.length === 2 &&
-      positions.every(position => /^\d*(.\d+)?%$/.test(position))
+      positions.every((position) => /^\d*(.\d+)?%$/.test(position))
     ) {
       positions = positions.map((value) => {
         return `${Math.round(parseFloat(value))} %`;
       });
     }
     else {
-      positions = [Dictionary.get('unknown'), Dictionary.get('unknown')];
+      positions = [this.dictionary.get('unknown'), this.dictionary.get('unknown')];
     }
 
     return {
@@ -350,7 +358,7 @@ export default class XRay extends H5P.Question {
     let x, y;
     ({ x, y } = this.getLensPosition());
 
-    const screenreaderText = Dictionary.get('movedLensTo')
+    const screenreaderText = this.dictionary.get('movedLensTo')
       .replace(/@positionHorizontal/g, x)
       .replace(/@positionVertical/g, y);
 
@@ -392,11 +400,11 @@ export default class XRay extends H5P.Question {
    */
   addEventListeners() {
     // Also handles enter/space on toggle button
-    this.displayNavigation.addEventListener('click', event => {
+    this.displayNavigation.addEventListener('click', (event) => {
       this.handleClick(event);
     });
 
-    this.displayNavigation.addEventListener('touchstart', event => {
+    this.displayNavigation.addEventListener('touchstart', (event) => {
       this.handleTouchStart(event);
     });
 
@@ -404,11 +412,11 @@ export default class XRay extends H5P.Question {
       this.handleMouseOver();
     });
 
-    this.displayNavigation.addEventListener('touchmove', event => {
+    this.displayNavigation.addEventListener('touchmove', (event) => {
       this.handleTouchMove(event);
     });
 
-    this.displayNavigation.addEventListener('mousemove', event => {
+    this.displayNavigation.addEventListener('mousemove', (event) => {
       this.handleMouseMove(event);
     });
 
@@ -416,7 +424,7 @@ export default class XRay extends H5P.Question {
       this.handleMouseOut(event);
     });
 
-    this.displayNavigation.addEventListener('touchend', event => {
+    this.displayNavigation.addEventListener('touchend', (event) => {
       this.handleTouchEnd(event);
     });
 
@@ -433,7 +441,7 @@ export default class XRay extends H5P.Question {
           this.imageLens.style.width = `${imageNavigationRect.width}px`;
         }
         else {
-          this.imageLens.style.width = `100%`;
+          this.imageLens.style.width = '100%';
         }
 
         if (this.lensHeightUnit === 'px') {
@@ -441,7 +449,7 @@ export default class XRay extends H5P.Question {
           this.imageLens.style.height = `${imageNavigationRect.height}px`;
         }
         else {
-          this.imageLens.style.height = `100%`;
+          this.imageLens.style.height = '100%';
         }
       }, 0); // Required for initial size on attach
     });
@@ -449,7 +457,7 @@ export default class XRay extends H5P.Question {
 
   /**
    * Handle key down.
-   * @param {KeyEvent} event Key event.
+   * @param {KeyboardEvent} event Key event.
    */
   handleKeydown(event) {
     if (!this.isXRaying) {
@@ -506,7 +514,7 @@ export default class XRay extends H5P.Question {
 
     if (this.isXRaying) {
       if (event.target === this.toggleButton) {
-        this.read(`${Dictionary.get('xRayOff')}`);
+        this.read(`${this.dictionary.get('xRayOff')}`);
       }
 
       this.deactivateXRay();
@@ -520,7 +528,7 @@ export default class XRay extends H5P.Question {
       if (event.target === this.toggleButton) {
         this.imageNavigation.focus();
 
-        this.read(`${Dictionary.get('xRayOn')} ${Dictionary.get('instructions')}`);
+        this.read(`${this.dictionary.get('xRayOn')} ${this.dictionary.get('instructions')}`);
 
         // Use center of image for initial position if using keyboard
         const imageRect = this.imageNavigation.getBoundingClientRect();
@@ -537,6 +545,7 @@ export default class XRay extends H5P.Question {
 
   /**
    * Handle touch start.
+   * @param {Event} event Event.
    */
   handleTouchStart(event) {
     event.preventDefault();

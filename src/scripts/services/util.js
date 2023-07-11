@@ -2,14 +2,16 @@
 export default class Util {
   /**
    * Extend an array just like JQuery's extend.
-   * @param {object} arguments Objects to be merged.
-   * @return {object} Merged objects.
+   * @returns {object} Merged objects.
    */
   static extend() {
     for (let i = 1; i < arguments.length; i++) {
       for (let key in arguments[i]) {
         if (Object.prototype.hasOwnProperty.call(arguments[i], key)) {
-          if (typeof arguments[0][key] === 'object' && typeof arguments[i][key] === 'object') {
+          if (
+            typeof arguments[0][key] === 'object' &&
+            typeof arguments[i][key] === 'object'
+          ) {
             this.extend(arguments[0][key], arguments[i][key]);
           }
           else {
@@ -28,7 +30,7 @@ export default class Util {
    * @param {number} hi1 Upper boundary of first range.
    * @param {number} lo2 Lower boundary of second range.
    * @param {number} hi2 Upper boundary of second range.
-   * @return {number} Remapped value.
+   * @returns {number} Remapped value.
    */
   static project(value, lo1, hi1, lo2, hi2) {
     return lo2 + (hi2 - lo2) * (value - lo1) / (hi1 - lo1);
@@ -36,7 +38,7 @@ export default class Util {
 
   /**
    * Detect whether user is running iOS.
-   * @return {boolean} True, if user is running iOS.
+   * @returns {boolean} True, if user is running iOS.
    */
   static isIOS() {
     return (
