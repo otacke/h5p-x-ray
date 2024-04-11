@@ -1,5 +1,5 @@
-import Dictionary from '@services/dictionary';
-import Util from '@services/util';
+import Dictionary from '@services/dictionary.js';
+import Util from '@services/util.js';
 
 export default class XRay extends H5P.Question {
   /**
