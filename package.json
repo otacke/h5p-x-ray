@@ -1,6 +1,6 @@
 {
   "name": "h5p-x-ray",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Add an x-ray effect to images in H5P",
   "private": true,
   "scripts": {
