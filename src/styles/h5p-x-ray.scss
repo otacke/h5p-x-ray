@@ -1,4 +1,4 @@
-@import "@styles/h5p-x-ray-main";
+@use "@styles/main";
 
 .h5p-x-ray {
   .h5p-question-content {
@@ -23,11 +23,11 @@
 
             .h5p-x-ray-image-navigation {
               user-select: none;
-              transition: filter $default-transition-duration $default-transition-timing-function;
+              transition: filter main.$default-transition-duration main.$default-transition-timing-function;
             }
 
             &.h5p-x-ray-image-placeholder {
-              height: $default-image-placeholder-height;
+              height: main.$default-image-placeholder-height;
             }
           }
 
@@ -39,7 +39,7 @@
             overflow: hidden;
             position: absolute;
             pointer-events: none;
-            transition: opacity $default-transition-duration $default-transition-timing-function;
+            transition: opacity main.$default-transition-duration main.$default-transition-timing-function;
 
             .h5p-x-ray-image-lens {
               position: absolute;
@@ -48,20 +48,20 @@
           }
 
           .h5p-x-ray-button-toggle {
-            background: $button-toggle-background-color;
+            background: main.$button-toggle-background-color;
             border: .1em solid transparent;
             border-radius: 50%;
-            bottom: $button-toggle-offset;
-            color: $button-toggle-color;
-            font-size: $button-toggle-font-size;
-            height: $button-toggle-size;
+            bottom: main.$button-toggle-offset;
+            color: main.$button-toggle-color;
+            font-size: main.$button-toggle-font-size;
+            height: main.$button-toggle-size;
             pointer-events: none;
             position: absolute;
-            right: $button-toggle-offset;
-            width: $button-toggle-size;
+            right: main.$button-toggle-offset;
+            width: main.$button-toggle-size;
 
             &::before {
-              content: $icon-button-x-ray;
+              content: main.$icon-button-x-ray;
               font-family: 'H5PFontAwesome4', sans-serif;
               left: 50%;
               position: absolute;
@@ -87,7 +87,7 @@
             .h5p-x-ray-wrapper-navigation {
               .h5p-x-ray-image-navigation {
                 &.h5p-x-ray-darken {
-                  filter: $default-darkening-filter;
+                  filter: main.$default-darkening-filter;
                 }
               }
             }
@@ -98,7 +98,7 @@
 
             .h5p-x-ray-button-toggle {
               &::before {
-                content: $icon-button-x-ray-in;
+                content: main.$icon-button-x-ray-in;
                 font-family: 'H5PFontAwesome4', sans-serif;
               }
             }
