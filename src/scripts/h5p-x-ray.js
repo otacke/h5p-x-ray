@@ -1,6 +1,12 @@
 import Dictionary from '@services/dictionary.js';
 import Util from '@services/util.js';
 
+/** @constant {number} TRANSFORM_WITH_COORDINATES_LENGTH Indicates that we have two coordinates (x, y). */
+const TRANSFORM_WITH_COORDINATES_LENGTH = 2;
+
+/** @constant {number} CLOSE_TO_100_PERCENT Used to avoid layout issues when using 100%. */
+const CLOSE_TO_100_PERCENT = 99.5;
+
 export default class XRay extends H5P.Question {
   /**
    * @class
@@ -17,11 +23,11 @@ export default class XRay extends H5P.Question {
         imageAlignment: 'center',
         xRayLensWidth: '20%',
         xRayLensHeight: '25%',
-        darkenImageOnXRay: true
+        darkenImageOnXRay: true,
       },
       behaviour: {
         autoXRay: true,
-        hideXRayIndicator: false
+        hideXRayIndicator: false,
       },
       a11y: {
         xRay: 'X-ray',
@@ -29,8 +35,8 @@ export default class XRay extends H5P.Question {
         xRayOff: 'X-ray deactivated.',
         instructions: 'Use arrow keys to move X-ray lens.',
         movedLensTo: 'Moved lens to @positionHorizontal horizontally and to @positionVertical vertically.',
-        unknown: 'unknown'
-      }
+        unknown: 'unknown',
+      },
     }, params);
     this.contentId = contentId;
 
@@ -46,7 +52,7 @@ export default class XRay extends H5P.Question {
 
     this.xRayLensSize = {
       width: lensWidth,
-      height: lensHeight
+      height: lensHeight,
     };
   }
 
@@ -75,17 +81,20 @@ export default class XRay extends H5P.Question {
     let value;
     let unit;
 
+    const unitPx = 'px';
+    const unitPercent = '%';
+
     if (/^[+-]?([0-9]*[.])?[0-9]+$/.test(cssValue)) {
-      unit = 'px';
+      unit = unitPx;
       value = cssValue.trim();
     }
-    else if (cssValue.substr(-2) === 'px') {
-      unit = 'px';
-      value = cssValue.substr(0, cssValue.length - 2).trim();
+    else if (cssValue.substring(cssValue.length - unitPx.length) === unitPx) {
+      unit = unitPx;
+      value = cssValue.substring(0, cssValue.length - unitPx.length).trim();
     }
-    else if (cssValue.substr(-1) === '%') {
-      unit = '%';
-      value = cssValue.substr(0, cssValue.length - 1).trim();
+    else if (cssValue.substring(cssValue.length - unitPercent.length) === unitPercent) {
+      unit = unitPercent;
+      value = cssValue.substring(0, cssValue.length - unitPercent.length).trim();
     }
     else {
       return params.default;
@@ -138,7 +147,7 @@ export default class XRay extends H5P.Question {
       this.contentId,
       H5P.jQuery(wrapperNavigation),
       true,
-      {}
+      {},
     );
     this.imageNavigation = this.imageInstance.$img.get(0);
     this.imageNavigation.setAttribute('draggable', false);
@@ -173,7 +182,7 @@ export default class XRay extends H5P.Question {
       this.contentId,
       H5P.jQuery(this.wrapperLens),
       true,
-      {}
+      {},
     );
     this.imageLens = this.imageInstanceLens.$img.get(0);
     this.imageLens.classList.add('h5p-x-ray-image-lens');
@@ -254,7 +263,7 @@ export default class XRay extends H5P.Question {
       widthFactor: widthFactor,
       height: heightValue,
       heightUnit: heightUnit,
-      heightFactor: heightFactor
+      heightFactor: heightFactor,
     };
   }
 
@@ -265,7 +274,7 @@ export default class XRay extends H5P.Question {
   getLensPosition() {
     let positions = this.imageLens.style.transformOrigin.split(' ');
     if (
-      positions.length === 2 &&
+      positions.length === TRANSFORM_WITH_COORDINATES_LENGTH &&
       positions.every((position) => /^\d*(.\d+)?%$/.test(position))
     ) {
       positions = positions.map((value) => {
@@ -278,7 +287,7 @@ export default class XRay extends H5P.Question {
 
     return {
       x: positions[0],
-      y: positions[1]
+      y: positions[1],
     };
   }
 
@@ -294,32 +303,38 @@ export default class XRay extends H5P.Question {
 
     const imagePointerPosition = {
       x: position.x - imageRect.left,
-      y: position.y - imageRect.top
+      y: position.y - imageRect.top,
     };
 
     const lensPosition = {
+      // eslint-disable-next-line no-magic-numbers
       x: Math.max(0, Math.min(imagePointerPosition.x - lensRect.width / 2, imageRect.width - lensRect.width)),
-      y: Math.max(0, Math.min(imagePointerPosition.y - lensRect.height / 2, imageRect.height - lensRect.height))
+      // eslint-disable-next-line no-magic-numbers
+      y: Math.max(0, Math.min(imagePointerPosition.y - lensRect.height / 2, imageRect.height - lensRect.height)),
     };
 
     const lensPositionPercentage = {
       x: lensPosition.x / imageRect.width * 100,
-      y: lensPosition.y / imageRect.height * 100
+      y: lensPosition.y / imageRect.height * 100,
     };
 
     this.wrapperLens.style.left = `${lensPositionPercentage.x}%`;
     this.wrapperLens.style.top = `${lensPositionPercentage.y}%`;
 
     const lensOffsets = {
+      // eslint-disable-next-line no-magic-numbers
       minX: lensRect.width / 2,
+      // eslint-disable-next-line no-magic-numbers
       maxX: imageRect.width - lensRect.width / 2,
+      // eslint-disable-next-line no-magic-numbers
       minY: lensRect.height / 2,
-      maxY: imageRect.height - lensRect.height / 2
+      // eslint-disable-next-line no-magic-numbers
+      maxY: imageRect.height - lensRect.height / 2,
     };
 
     const cappedPosition = {
       x: Math.max(lensOffsets.minX, Math.min(imagePointerPosition.x, lensOffsets.maxX)),
-      y: Math.max(lensOffsets.minY, Math.min(imagePointerPosition.y, lensOffsets.maxY))
+      y: Math.max(lensOffsets.minY, Math.min(imagePointerPosition.y, lensOffsets.maxY)),
     };
 
     /*
@@ -327,8 +342,8 @@ export default class XRay extends H5P.Question {
      * Will still be read as 100% to screen reader due to rounding
      */
     const cappedPositionPercentage = {
-      x: Util.project(cappedPosition.x, lensOffsets.minX, lensOffsets.maxX, 0, 99.5),
-      y: Util.project(cappedPosition.y, lensOffsets.minY, lensOffsets.maxY, 0, 99.5)
+      x: Util.project(cappedPosition.x, lensOffsets.minX, lensOffsets.maxX, 0, CLOSE_TO_100_PERCENT),
+      y: Util.project(cappedPosition.y, lensOffsets.minY, lensOffsets.maxY, 0, CLOSE_TO_100_PERCENT),
     };
 
     if (this.lensWidthUnit === '%' && this.lensHeightUnit === '%') {
@@ -472,16 +487,20 @@ export default class XRay extends H5P.Question {
       let y = lensRect.top;
 
       if (event.key === 'ArrowLeft') {
+        // eslint-disable-next-line no-magic-numbers
         y += lensRect.height / 2;
       }
       else if (event.key === 'ArrowRight') {
         x += lensRect.width;
+        // eslint-disable-next-line no-magic-numbers
         y += lensRect.height / 2;
       }
       else if (event.key === 'ArrowUp') {
+        // eslint-disable-next-line no-magic-numbers
         x += lensRect.width / 2;
       }
       else if (event.key === 'ArrowDown') {
+        // eslint-disable-next-line no-magic-numbers
         x += lensRect.width / 2;
         y += lensRect.height;
       }
@@ -522,7 +541,7 @@ export default class XRay extends H5P.Question {
     else {
       let position = {
         x: event.pageX,
-        y: event.pageY
+        y: event.pageY,
       };
 
       if (event.target === this.toggleButton) {
@@ -533,8 +552,10 @@ export default class XRay extends H5P.Question {
         // Use center of image for initial position if using keyboard
         const imageRect = this.imageNavigation.getBoundingClientRect();
         position = {
+          // eslint-disable-next-line no-magic-numbers
           x: imageRect.left + imageRect.width / 2,
-          y: imageRect.height / 2
+          // eslint-disable-next-line no-magic-numbers
+          y: imageRect.height / 2,
         };
       }
 
@@ -555,8 +576,8 @@ export default class XRay extends H5P.Question {
     this.setLensPosition(
       {
         x: event.touches[0].pageX,
-        y: event.touches[0].pageY - lensRect.height
-      }
+        y: event.touches[0].pageY - lensRect.height,
+      },
     );
   }
 
@@ -573,8 +594,8 @@ export default class XRay extends H5P.Question {
     this.setLensPosition(
       {
         x: event.touches[0].pageX,
-        y: event.touches[0].pageY - lensRect.height
-      }
+        y: event.touches[0].pageY - lensRect.height,
+      },
     );
   }
 
